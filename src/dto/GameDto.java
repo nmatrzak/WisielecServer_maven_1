@@ -6,52 +6,56 @@ import game.Game;
 import utils.WordCodeDecode;
 
 /**
- * The object of GameDto class carries data between processes (client and server)
- * The class implements a tag interface (does not contain any method) Serializable.
+ * Obiekt klasy GameDto sluży do przenoszenie danych gry pomiedzy serwisami
+ * (client server) Klasa implementuje interface Serializable (nie zawiera on
+ * żadnych metod)./ The object of GameDto class carries game data between
+ * processes (client and server) The class implements a tag interface
+ * Serializable.This interface dosn't contain any method.
+ * 
  * @author Norbert Matrzak
  * @version 1.0
  * @since 2019-01-01
  */
 public class GameDto implements Serializable {
 
-	/** The constant serialVersionUID. */
+	/** stala/The constant - serialVersionUID. */
 	private static final long serialVersionUID = 75264711556227767L;
 
-	/** The word */
+	/** slowo/The theWord */
 	private String theWord;
-	
-	/** The gapped word. */
+
+	/** niepelne slowo/The gapped word. */
 	private String gappedWord;
-	
-	/** The count missed. */
+
+	/** liczba blednych odpowiedzi/The count missed. */
 	private int countMissed = 0;
-	
-	/** The used letters. */
+
+	/** uzyte litery/The used letters. */
 	private String usedLetters;
-	
-	/** The game status. */
+
+	/** status gry/The game status. */
 	private String gameStatus;
-	
-	/** The winner. */
+
+	/** zwyciezca/The winner. */
 	private String winner;
-	
-	/** The player word name. */
+
+	/** nazwa gracza tworzacego slowo/The player word name. */
 	private String playerWordName;
-	
-	/** The player guess name.*/
+
+	/** nazwa gracza zgadujacego/The player guess Name. */
 	private String playerGuessName;
 
 	/**
-	 * Instantiates a new GameDto.
+	 * Konstruktor klasy GameDto/ Instantiates a new GameDto.
 	 *
-	 * @param theWord the the word
-	 * @param gappedWord the gap in word
-	 * @param countMissed the count missed
-	 * @param usedLetters the used letters
-	 * @param gameStatus the game status
-	 * @param winner the winner
-	 * @param playerWordName the player word name
-	 * @param playerGuessName the player guess name
+	 * @param theWord         - slowo/the word
+	 * @param gappedWord      - niepelne slowo/the gap in word
+	 * @param countMissed     - liczba blednych odpowiedzi /the count missed
+	 * @param usedLetters     - uzyte litery/the used letters
+	 * @param gameStatus      - status gry/the game status
+	 * @param winner          - zwyciezca/the winner
+	 * @param playerWordName  - nazwa gracza tworzacego slowo/the player word name
+	 * @param playerGuessName - nazwa gracza zgadujaceg/the player guess name
 	 */
 	public GameDto(String theWord, String gappedWord, int countMissed, String usedLetters, String gameStatus,
 			String winner, String playerWordName, String playerGuessName) {
@@ -66,153 +70,158 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Gets the the word.
+	 * Pobiera slowo/Gets the word.
 	 *
-	 * @return the the word
+	 * @return slowo/the word
 	 */
 	public String getTheWord() {
 		return theWord;
 	}
 
 	/**
-	 * Sets the the word.
+	 * Ustawia slowo/Sets the word.
 	 *
-	 * @param theWord the new the word
+	 * @param theWord - nowe slowo/the new word
 	 */
 	public void setTheWord(String theWord) {
 		this.theWord = theWord;
 	}
 
 	/**
-	 * Gets the gap in word.
+	 * Pobiera roznice w slowie zgadywanym/Gets the gap in word.
 	 *
-	 * @return the gap in word
+	 * @return niepelne slowo/gapped word
 	 */
 	public String getGappedWord() {
 		return gappedWord;
 	}
 
 	/**
-	 * Sets the gap in word.
+	 * Ustawia roznice w stosunku do slowa zgadywanego/Sets the gap in word.
 	 *
-	 * @param gappedWord the new gap in word
+	 * @param gappedWord - nowa roznica w slowie zgadywanym/the new gap in guess
+	 *                   word
 	 */
 	public void setGappedWord(String gappedWord) {
 		this.gappedWord = gappedWord;
 	}
 
 	/**
-	 * Gets the count missed.
+	 * Pobiera ilosc blednych prob/Gets the count missed.
 	 *
-	 * @return the count missed
+	 * @return liczba bledow/countMissed
 	 */
 	public int getCountMissed() {
 		return countMissed;
 	}
 
 	/**
-	 * Sets the count missed.
+	 * Ustawia ilosc blednych prob/Sets the count missed.
 	 *
-	 * @param countMissed the new count missed
+	 * @param countMissed - nowa liczba prob/the new count missed
 	 */
 	public void setCountMissed(int countMissed) {
 		this.countMissed = countMissed;
 	}
 
 	/**
-	 * Gets the used letters.
+	 * Pobiera uzyte litery/ Gets the used letters.
 	 *
-	 * @return the used letters
+	 * @return uzyte litery/the used letters
 	 */
 	public String getUsedLetters() {
 		return usedLetters;
 	}
 
 	/**
-	 * Sets the used letters.
+	 * Ustawia uzyte litery/Sets the used letters.
 	 *
-	 * @param usedLetters the new used letters
+	 * @param usedLetters - nowy ciag liter/the new used letters
 	 */
 	public void setUsedLetters(String usedLetters) {
 		this.usedLetters = usedLetters;
 	}
 
 	/**
-	 * Gets the game status.
+	 * Pobiera stautus gry/Gets the game status.
 	 *
-	 * @return the game status
+	 * @return status gry/game status
 	 */
 	public String getGameStatus() {
 		return gameStatus;
 	}
 
 	/**
-	 * Sets the game status.
+	 * Ustawia status gry/Sets the game status.
 	 *
-	 * @param gameStatus the new game status
+	 * @param gameStatus - nowy status gry/the new game status
 	 */
 	public void setGameStatus(String gameStatus) {
 		this.gameStatus = gameStatus;
 	}
 
 	/**
-	 * Gets the winner.
+	 * Pobiera nazwe zwyciezcy/Gets the winner.
 	 *
-	 * @return the winner
+	 * @return zwyciezca/winner
 	 */
 	public String getWinner() {
 		return winner;
 	}
 
 	/**
-	 * Sets the winner.
+	 * Ustawia imie zwyciezcy/Sets the winner.
 	 *
-	 * @param winner the new winner
+	 * @param winner - nowa nazwa zwyciezcy/the new winner
 	 */
 	public void setWinner(String winner) {
 		this.winner = winner;
 	}
 
 	/**
-	 * Gets the player one name.
+	 * Pobiera imie gracza wprowadzajacego wyraz do zgadniecia/Gets the player name
+	 * who write the word
 	 *
-	 * @return the player one name
+	 * @return grcz wprowadzajacy slowo/player insert word name
 	 */
 	public String getPlayer1Name() {
 		return playerWordName;
 	}
 
 	/**
-	 * Sets the player one name.
+	 * Ustawia imie gracza wprowadzajacego wyraz do zgadniecia/ Sets the player name
+	 * who write the word
 	 *
-	 * @param player1Name the new player one name
+	 * @param player1Name - imie gracza/the new player one name
 	 */
 	public void setPlayer1Name(String player1Name) {
 		this.playerWordName = player1Name;
 	}
 
 	/**
-	 * Gets the player two name.
+	 * Pobiera imie gracza zgadujacego/Gets the player name who guess the word
 	 *
-	 * @return the player two name
+	 * @return nazwa gracza zgadujacego slowo/name of player guess word
 	 */
 	public String getPlayer2Name() {
 		return playerGuessName;
 	}
 
 	/**
-	 * Sets the player two name.
+	 * Ustawia imie gracza zgadujacego/Sets the player name who guess the word
 	 *
-	 * @param player2Name the new player two name
+	 * @param player2Name - imie gracza zgadujacego/the new player two name
 	 */
 	public void setPlayer2Name(String player2Name) {
 		this.playerGuessName = player2Name;
 	}
 
 	/**
-	 * This static method is used to check status of parameter game and 
-	 * get instantiates of GameDto or null.
-	 * @param game the game
+	 * Metoda statyczna odpowiedzialny za tworzenie instancji klasy GameDto po
+	 * sprawdzeniu braku wartosci null. This static method is used to check status
+	 * of parameter game and get instantiates of GameDto or null.
+	 * 
+	 * @param game - gra/the game
 	 * @return GameDto
 	 */
 	public static GameDto of(Game game) {
@@ -227,13 +236,14 @@ public class GameDto implements Serializable {
 			return null;
 
 	}
-	
-	/* 
+
+	/*
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return String.format("player word: %s, player guess, %s, state: %s, word: %s",playerWordName, playerGuessName, gameStatus, theWord);
+		return String.format("player word: %s, player guess, %s, state: %s, word: %s", playerWordName, playerGuessName,
+				gameStatus, theWord);
 	}
 
 }

@@ -17,24 +17,48 @@ import game.Game;
 import game.Player;
 import server.IGameServer;
 
+/**
+ * klasa PlayerService/ The Class PlayerService.
+ * 
+ * @author Norbert Matrzak
+ * @version 1.0
+ * @since 2019-01-01
+ */
+
 @ApplicationScoped
 public class PlayerService implements IPlayerService {
 
-	@Inject	
+	/** server gry/The game server. */
+	@Inject
 	private IGameServer gameServer;
-	
+
+	/*
+	 * @see service.IPlayerService#getPlayersDto()
+	 */
 	public List<PlayerDto> getPlayersDto() {
 		System.out.println("PlayerService.getPlayersDto > ");
-		checkAndRemoveNoActivePlayers();	
+		checkAndRemoveNoActivePlayers();
 		return gameServer.getPlayers().stream().map(this::mapToPlayerDto).collect(Collectors.toList());
 	}
-	
+
+	/**
+	 * sprawdza i usuwa nieaktywnego gracza/Check and remove no active players.
+	 */
 	public void checkAndRemoveNoActivePlayers() {
-		System.out.println("PlayerService.checkAndRemoveNoActivePlayers() ");		
-		List<Player> players =gameServer.getPlayers().stream().filter(Player::noneFeedBack).collect(Collectors.toList());
-		players.forEach( p -> { gameServer.removePlayer(p); });
+		System.out.println("PlayerService.checkAndRemoveNoActivePlayers() ");
+		List<Player> players = gameServer.getPlayers().stream().filter(Player::noneFeedBack)
+				.collect(Collectors.toList());
+		players.forEach(p -> {
+			gameServer.removePlayer(p);
+		});
 	}
 
+	/**
+	 * mapuje do obiektu PlayerDto/Map to PlayerDto object.
+	 *
+	 * @param player - gracz/the player
+	 * @return playerDto
+	 */
 	private PlayerDto mapToPlayerDto(Player player) {
 //		System.out.print("PlayerService.mapToPlayerDto");
 		PlayerDto dto = new PlayerDto();
@@ -47,29 +71,41 @@ public class PlayerService implements IPlayerService {
 		return dto;
 	}
 
+	/**
+	 * test /Test.
+	 *
+	 * @return the string
+	 */
 	public String test() {
 		System.out.print("PlayerService.test");
 		return "PlayerService - test ok";
 	}
 
+	/*
+	 * @see service.IPlayerService#getPlayer(java.lang.String)
+	 */
 	public PlayerDto getPlayer(String userName) {
-		System.out.print("PlayerService.getPlayer: "+userName);
+		System.out.print("PlayerService.getPlayer: " + userName);
 		return ofNullable(gameServer.findPlayerByName(userName)).map(this::mapToPlayerDto).orElse(null);
 	};
-	
 
+	/*
+	 * @see service.IPlayerService#getPlayer(long)
+	 */
 	public PlayerDto getPlayer(long playerId) {
-		System.out.print("PlayerService.getPlayer: "+playerId);
-		return ofNullable(gameServer.findPlayerById(playerId)).map(this::mapToPlayerDto).orElse(null);		
+		System.out.print("PlayerService.getPlayer: " + playerId);
+		return ofNullable(gameServer.findPlayerById(playerId)).map(this::mapToPlayerDto).orElse(null);
 	}
-	
 
+	/*
+	 * @see service.IPlayerService#createPlayer(java.lang.String)
+	 */
 	public PlayerDto createPlayer(String userName) {
-		System.out.print("PlayerService.createPlayer: "+userName);
+		System.out.print("PlayerService.createPlayer: " + userName);
 		if (userName.isEmpty()) {
 			throw new EmptyNameForPlayerException();
 		}
-		if (getPlayer(userName)!=null) {
+		if (getPlayer(userName) != null) {
 			return null;
 		}
 		Player player = new Player(userName);
@@ -77,60 +113,82 @@ public class PlayerService implements IPlayerService {
 		gameServer.addPlayer(player);
 		return mapToPlayerDto(player);
 	}
-	
+
+	/*
+	 * @see service.IPlayerService#removePlayer(long)
+	 */
 	public PlayerDto removePlayer(long playerId) {
-		System.out.print("PlayerService.removePlayer: "+playerId);		
-		Player player = gameServer.findPlayerById(playerId); 
-		if (player==null) {
+		System.out.print("PlayerService.removePlayer: " + playerId);
+		Player player = gameServer.findPlayerById(playerId);
+		if (player == null) {
 			return null;
 		} else {
 			gameServer.removePlayer(player);
 			return mapToPlayerDto(player);
 		}
 	}
-	
+
+	/*
+	 * @see service.IPlayerService#createGame(long, long)
+	 */
 	public Game createGame(long playerId, long opponentId) {
-		System.out.print("PlayerService.createGame: "+playerId+" vs " + opponentId);
+		System.out.print("PlayerService.createGame: " + playerId + " vs " + opponentId);
 		Player player = gameServer.findPlayerById(playerId);
-		System.out.println("PlayerService.createGame > player ="+player);
-		if (opponentId==0) {
-  		  return gameServer.createGame(player);	
+		System.out.println("PlayerService.createGame > player =" + player);
+		if (opponentId == 0) {
+			return gameServer.createGame(player);
 		} else {
-		  Player opponent = gameServer.findPlayerById(opponentId);
-		  System.out.println("PlayerService.createGame > opponent ="+opponent);	
-		  return gameServer.createGame(player, opponent);
+			Player opponent = gameServer.findPlayerById(opponentId);
+			System.out.println("PlayerService.createGame > opponent =" + opponent);
+			return gameServer.createGame(player, opponent);
 		}
 	}
-	
+
+	/*
+	 * @see service.IPlayerService#updateGappedWordLetter(long, java.lang.String)
+	 */
 	public GameDto updateGappedWordLetter(long playerId, String letter) {
-		Player player = gameServer.findPlayerById(playerId); 
+		Player player = gameServer.findPlayerById(playerId);
 		return of(gameServer.updateGappedWordLetter(player, letter));
 	}
-	
 
+	/*
+	 * @see service.IPlayerService#updateWord(long, java.lang.String)
+	 */
 	public GameDto updateWord(long playerId, String word) {
-		Player player = gameServer.findPlayerById(playerId); 
+		Player player = gameServer.findPlayerById(playerId);
 		return of(gameServer.updateWord(player, word));
 	}
-		
+
+	/**
+	 * Pobiera gre/Gets the game.
+	 *
+	 * @param userName - nazwa uzytkownikathe user name
+	 * @return gre/the game
+	 */
 	public GameDto getGame(String userName) {
-		return GameDto.of( gameServer.getGameByPlayerName(userName) );
+		return GameDto.of(gameServer.getGameByPlayerName(userName));
 	}
-	
+
 //	public GameDto endGame(long playerId) {
 //		return GameDto.of( gameServer.endGame(playerId) );
 //	}
-	
+
+	/*
+	 * @see service.IPlayerService#playerAlive(long)
+	 */
 	public void playerAlive(long playerId) {
 		Player player = gameServer.findPlayerById(playerId);
 		player.updateLastActivity();
 	}
 
+	/*
+	 * @see service.IPlayerService#getGame(long)
+	 */
 	@Override
 	public GameDto getGame(long playerId) {
 		Player player = gameServer.findPlayerById(playerId);
-		return GameDto.of( gameServer.findGameByPlayer(player) );
+		return GameDto.of(gameServer.findGameByPlayer(player));
 	}
-	
-	
+
 }
