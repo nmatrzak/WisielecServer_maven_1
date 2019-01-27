@@ -3,7 +3,7 @@ package exception;
 /**
  * Klasa wyjatku nieznanej nazwy gracza/The Class unknown name player Exception.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

@@ -11,7 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * processes (client and server) The class implements a tag interface
  * Serializable.This interface dosn't contain any method.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

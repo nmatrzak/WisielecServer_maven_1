@@ -3,7 +3,7 @@ package exception;
 /**
  * Klasa wyjatku braku nazwy gracza/The Class empty name For player Exception.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

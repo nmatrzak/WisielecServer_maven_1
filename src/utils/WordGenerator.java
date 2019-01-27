@@ -13,7 +13,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 /**
  * klasa wstawiajaca slowo z pliku/class to insert a word from a file
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

@@ -20,7 +20,7 @@ import utils.WordCodeDecode;
 /**
  * Klasa do obslugi listy gier/Game list support class.
  *
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

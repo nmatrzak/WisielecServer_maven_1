@@ -12,7 +12,7 @@ import utils.WordCodeDecode;
  * processes (client and server) The class implements a tag interface
  * Serializable.This interface dosn't contain any method.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */
@@ -88,7 +88,7 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Pobiera roznice w slowie zgadywanym/Gets the gap in word.
+	 * Pobiera niepelne slowo zgadywane/Gets the gap in word.
 	 *
 	 * @return niepelne slowo/gapped word
 	 */
@@ -97,9 +97,9 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Ustawia roznice w stosunku do slowa zgadywanego/Sets the gap in word.
+	 * Ustawia niepelne slowo zgadywane/Sets the gap in word.
 	 *
-	 * @param gappedWord - nowa roznica w slowie zgadywanym/the new gap in guess
+	 * @param gappedWord - nowa niepelne slowo zgadywane/the new gap in guess
 	 *                   word
 	 */
 	public void setGappedWord(String gappedWord) {
@@ -179,7 +179,7 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Pobiera imie gracza wprowadzajacego wyraz do zgadniecia/Gets the player name
+	 * Pobiera nazwe gracza wprowadzajacego wyraz do zgadniecia/Gets the player name
 	 * who write the word
 	 *
 	 * @return grcz wprowadzajacy slowo/player insert word name
@@ -189,7 +189,7 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Ustawia imie gracza wprowadzajacego wyraz do zgadniecia/ Sets the player name
+	 * Ustawia nazwe gracza wprowadzajacego wyraz do zgadniecia/ Sets the player name
 	 * who write the word
 	 *
 	 * @param player1Name - imie gracza/the new player one name
@@ -199,7 +199,7 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Pobiera imie gracza zgadujacego/Gets the player name who guess the word
+	 * Pobiera nazwe gracza zgadujacego/Gets the player name who guess the word
 	 *
 	 * @return nazwa gracza zgadujacego slowo/name of player guess word
 	 */
@@ -217,7 +217,7 @@ public class GameDto implements Serializable {
 	}
 
 	/**
-	 * Metoda statyczna odpowiedzialny za tworzenie instancji klasy GameDto po
+	 * Metoda statyczna odpowiedzialna za tworzenie instancji klasy GameDto po
 	 * sprawdzeniu braku wartosci null. This static method is used to check status
 	 * of parameter game and get instantiates of GameDto or null.
 	 * 

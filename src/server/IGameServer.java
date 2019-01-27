@@ -8,7 +8,7 @@ import game.Player;
 /**
  * Interfejs obslugi listy gier/Game list support interface
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

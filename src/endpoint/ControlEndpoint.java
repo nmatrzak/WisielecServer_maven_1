@@ -11,7 +11,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Punkt dostępowy do webservice/Access point to webservice
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

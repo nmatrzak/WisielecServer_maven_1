@@ -9,7 +9,7 @@ import ws.IClientWebSocket;
 /**
  * Klasa serwera aplikacji/The Class AppServer.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

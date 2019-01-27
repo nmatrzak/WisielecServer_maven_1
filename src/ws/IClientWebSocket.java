@@ -3,7 +3,7 @@ package ws;
 /**
  * Interfejs ClientWebsocket/The Interface IClientWebSocket.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

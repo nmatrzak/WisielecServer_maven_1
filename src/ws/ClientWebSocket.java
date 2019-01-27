@@ -22,7 +22,7 @@ import server.IAppServer;
  * klasa zapewniajaca komunikacje servera z klientem/this class provide
  * communication between the server and the clien
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

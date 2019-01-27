@@ -8,7 +8,7 @@ import utils.WordGenerator;
 /**
  * Klasa gry/The Class Game.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */

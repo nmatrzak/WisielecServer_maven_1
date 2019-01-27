@@ -7,7 +7,7 @@ import java.util.List;
  * klasa odpowiedzialna za dekodowanie polskich znakow/class responsible for
  * decoding Polish characters
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */
@@ -27,7 +27,7 @@ public class WordCodeDecode {
 	 * dekodowanie /Decode.
 	 *
 	 * @param word - slowo/the word
-	 * @return the string
+	 * @return slowo/the word
 	 */
 	public static String decode(String word) {
 		for (int i = 0; i < coded.size(); i++) {

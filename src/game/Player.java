@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * klasa gracz/The Class Player.
  * 
- * @author Norbert Matrzak
+ * @author Piotr Podgórski
  * @version 1.0
  * @since 2019-01-01
  */
