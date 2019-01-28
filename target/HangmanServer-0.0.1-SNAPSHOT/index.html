@@ -11,7 +11,7 @@
 		<span id="health"></span>
 	</h2>
 	<br />
-	<h1>Player list:</h1>	
+	<!--<h1>Player list:</h1>-->
 	<h2>
 		<span id="players"></span>
 	</h2>
@@ -19,7 +19,7 @@
 	<script>
 		var timerCounterFrom = 10;
 		var timerCounter = timerCounterFrom;
-
+<!--funkcja wyswietljaca date serwera -->
 		function refresHealthSection() {
 			console.log("refresHealthSection");
 			$.ajax({
@@ -33,16 +33,16 @@
 		
 		}
 		
-		
+		<!--funkcja wyswietljaca liste graczy - nieaktywna -->
 		function showList(list) {
 		  $("#players").html(list)
 		}
-		
+		<!--funkcja dodajaca gracza do wyswietlanej listy - nieaktywna -->
 		function addToList(item, u) {		
 			t = "<div>"+item.name+"</div>"			
 		return t;
    	   }
-		
+		<!--funkcja odsiezajaca sesje -->
 		function refresPlayersSection() {
 			console.log("refresPlayersSection");
 			$.ajax({
@@ -60,7 +60,7 @@
 				}
 			})			
 		}		
-
+<!--funkcja potwierdzajaca dzialanie serwera -->
 		function displayHealth() {
 			console.log("displayHealth: " + timerCounter);
 			timerCounter--;
@@ -71,7 +71,7 @@
 			//	refresPlayersSection();
 			}
 		}
-
+<!--funkcja uspienia odliczania -->
 		function timeout() {
 			setTimeout(function() {				
 				displayHealth()
