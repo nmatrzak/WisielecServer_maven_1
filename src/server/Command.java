@@ -3,7 +3,7 @@ package server;
 /**
  * klasa wyliczeniowa komend wiersza polecen/The Enum Command.
  * 
- * @author Piotr Podgórski
+ * @author Piotr Podgorski
  * @version 1.0
  * @since 2019-01-01
  */
