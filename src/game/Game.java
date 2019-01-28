@@ -334,7 +334,7 @@ public class Game {
 	}
 
 	/**
-	 * zakon gre przed czasem przez gracza/End game before because of player.
+	 * zakoncz gre przed czasem przez gracza/End game before because of player.
 	 *
 	 * @param player -gracz/the player
 	 */

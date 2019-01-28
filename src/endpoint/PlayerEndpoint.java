@@ -20,9 +20,9 @@ import dto.PlayerDto;
 import service.IPlayerService;
 
 /**
- * Punkt dostępowy do webservice /Access point to webservice.
+ * Punkt dostepowy do webservice /Access point to webservice.
  *
- * @author Piotr Podgórski
+ * @author Piotr Podgorski
  * @version 1.0
  * @since 2019-01-01
  */
@@ -59,7 +59,7 @@ public class PlayerEndpoint {
 	}
 
 	/**
-	 * Pobiera gracza po imieniu/bGets the player by name.
+	 * Pobiera gracza po imieniu/Gets the player by name.
 	 *
 	 * @param name - imie/the name
 	 * @return - gracza po imieniu/the player by name
