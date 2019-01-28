@@ -7,7 +7,7 @@ import java.util.List;
  * klasa odpowiedzialna za dekodowanie polskich znakow/class responsible for
  * decoding Polish characters
  * 
- * @author Piotr Podgórski
+ * @author Piotr Podgorski
  * @version 1.0
  * @since 2019-01-01
  */
@@ -17,7 +17,7 @@ public class WordCodeDecode {
 	private final static String SEP = "@";
 
 	/** polskie znaki/The Constant specPolishChars. */
-	private final static String specPolishChars = "ĄĆĘŁŃÓŚŹŻąćęłńóśźż";
+	private final static String specPolishChars = "ĄĆĘŁŃÓŚŻŹąćęłńóśżźĽ";
 
 	/** lista kodujaca polskie znakiThe Constant coded. */
 	private final static List<Integer> coded = Arrays.asList(260, 262, 280, 321, 323, 0, 346, 379, 377, 261, 263, 281,

@@ -27,7 +27,7 @@ import service.IPlayerService;
  * @since 2019-01-01
  */
 
-//zasięg aplikacji/application range
+//zasieg aplikacji/application range
 @ApplicationScoped
 @Path("/game")
 public class GameEndpoint {
@@ -57,7 +57,7 @@ public class GameEndpoint {
 	/**
 	 * Pobiera liste gier/Gets the games list.
 	 *
-	 * @return list
+	 * @return list as json
 	 */
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
@@ -67,7 +67,7 @@ public class GameEndpoint {
 	}
 
 	/**
-	 * tworzy gre/ Createt game.
+	 * tworzy gre/ Create game.
 	 *
 	 * @param playerId   - id gracza/the player id
 	 * @param opponentId - id przeciwnika/the opponent id
@@ -101,20 +101,6 @@ public class GameEndpoint {
 		return Optional.ofNullable(game).map(this::toJson).map(json -> Response.ok(json, MediaType.TEXT_PLAIN).build())
 				.orElse(Response.status(Response.Status.NOT_FOUND).entity("GAME FOR USER NOT EXIST!").build());
 	}
-
-//	@GET
-//	@Path("endGame/{playerId}")
-//	@Produces(MediaType.TEXT_PLAIN)
-//	public Response endGame(@PathParam("playerId") long playerId) {
-//		System.out.println("GameEndpoint.endGame for player id = "+playerId);		
-//		GameDto game = playerService.endGame(playerId);	 		
-//		return Optional
-//				.ofNullable(  game )
-//							.map(this::toJson)
-//							.map( json -> Response.ok(json,MediaType.TEXT_PLAIN).build() )
-//							.orElse( Response.status(Response.Status.NOT_FOUND).entity("GAME FOR USER NOT EXIST!" ).build() )
-//							;
-//	}
 
 	/**
 	 * Przesyla litere do gry/Send letter and return game.

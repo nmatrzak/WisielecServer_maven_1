@@ -96,12 +96,6 @@ public class ClientWebSocket implements IClientWebSocket {
 			} else if (isMessageHello(message)) {
 				updatePlayerSession(message, session);
 			}
-//			else {
-//				String playerName = getPlayerIdBySession(session);
-//				if (!playerName.isEmpty() ) {
-//				   server.messageReceived(playerName, message);
-//				}
-//			}
 		}
 	}
 
@@ -163,7 +157,6 @@ public class ClientWebSocket implements IClientWebSocket {
 	// annotation used before method that is called when the WebSocket connection
 	// closes
 	@OnClose
-
 	public void onClose(Session session) {
 		System.out.println("WS:onClose::" + session.getId());
 		String playerId = getPlayerIdBySession(session);
