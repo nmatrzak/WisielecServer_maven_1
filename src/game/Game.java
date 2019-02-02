@@ -117,7 +117,7 @@ public class Game {
 	/**
 	 * Ustawienie gracza podajacego slowo/Sets the word player.
 	 *
-	 * @param gracz wpisujacy slowo/player set new word
+	 * @param player gracz wpisujacy slowo/player set new word
 	 */
 	public void setWordPlayer(Player player) {
 		players[wordPlayer] = player;
@@ -126,7 +126,7 @@ public class Game {
 	/**
 	 * ustawienie gracza zgadujacego/Sets the guess player.
 	 *
-	 * @param gracz zgadujacy slowo/ new guess player
+	 * @param player gracz zgadujacy slowo/ new guess player
 	 */
 	public void setGuessPlayer(Player player) {
 		players[1 - wordPlayer] = player;
